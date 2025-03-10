@@ -186,6 +186,8 @@ GameObject:
   - component: {fileID: 7932713328092731864}
   - component: {fileID: 5328426827686456594}
   - component: {fileID: -3714383970251538715}
+  - component: {fileID: 377826837799826397}
+  - component: {fileID: 6743487486029249045}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Turret
@@ -201,7 +203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5977019458999684295}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.741, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
@@ -284,4 +286,39 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.0137926815, y: 0.01379268, z: 0.013663449}
-  m_Center: {x: 0, y: 0.01, z: 0}
+  m_Center: {x: 0, y: 0.005, z: 0}
+--- !u!135 &377826837799826397
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5977019458999684295}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.045
+  m_Center: {x: -7.8632487e-19, y: 0.00044266155, z: 0.0000000037252903}
+--- !u!114 &6743487486029249045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5977019458999684295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7656b34474b9bc845956c163383289a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  core: {fileID: 2697617952663958069}
+  gun: {fileID: 3542408428170973012}
