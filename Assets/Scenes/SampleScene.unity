@@ -1322,7 +1322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 689897972290237301, guid: f6f68c65d1f31c344be715eea9a4d869, type: 3}
   homeLocation: {fileID: 470237788}
-  spawnRate: 0.3
+  spawnRate: 2
   maxCount: 10
   startDelay: 1
 --- !u!23 &803728778
@@ -1609,9 +1609,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934d9c38b31758e4791a72965320a730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3229982786925955494, guid: d1b42dfd5d6363f45abde83587130e8b, type: 3}
+  enemyPrefab: {fileID: 689897972290237301, guid: f6f68c65d1f31c344be715eea9a4d869, type: 3}
   homeLocation: {fileID: 470237788}
-  spawnRate: 0.3
+  spawnRate: 2
   maxCount: 10
   startDelay: 1
 --- !u!23 &887651172
@@ -3364,19 +3364,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6465325370197825149, guid: e2eda2a1b26e92f4c93373d42c9a1185, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.34690028
       objectReference: {fileID: 0}
     - target: {fileID: 6465325370197825149, guid: e2eda2a1b26e92f4c93373d42c9a1185, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6465325370197825149, guid: e2eda2a1b26e92f4c93373d42c9a1185, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.93790203
       objectReference: {fileID: 0}
     - target: {fileID: 6465325370197825149, guid: e2eda2a1b26e92f4c93373d42c9a1185, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6465325370197825149, guid: e2eda2a1b26e92f4c93373d42c9a1185, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3384,7 +3384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6465325370197825149, guid: e2eda2a1b26e92f4c93373d42c9a1185, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 139.404
       objectReference: {fileID: 0}
     - target: {fileID: 6465325370197825149, guid: e2eda2a1b26e92f4c93373d42c9a1185, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

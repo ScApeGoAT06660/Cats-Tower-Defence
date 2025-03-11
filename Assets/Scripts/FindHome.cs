@@ -9,7 +9,6 @@ public class FindHome : MonoBehaviour
     public EnemyDetails enemyDetails;
     public Slider healthBarPrefab;
 
-
     int currentHealth;
     NavMeshAgent ai;
     Slider healthBar;
@@ -24,16 +23,35 @@ public class FindHome : MonoBehaviour
         currentHealth = enemyDetails.maxHealth; 
 
         healthBar = Instantiate(healthBarPrefab, this.transform.position, Quaternion.identity);
+
+        healthBar.maxValue = enemyDetails.maxHealth;
+        healthBar.value = enemyDetails.maxHealth;
+
         healthBar.transform.SetParent(GameObject.Find("Canvas").transform);
     }
 
-    
+    public void Hit(int power)
+    {
+        if (healthBar != null)
+        {
+            healthBar.value -= power;
+
+            if (healthBar.value <= 0)
+            {
+                Destroy(healthBar.gameObject);
+                Destroy(this.gameObject, 0.1f);
+            }
+        } 
+    }
+
+
     void Update()
     {
         if(ai.remainingDistance < 0.5f && ai.hasPath)
         {
             LevelManager.RemoveEnemy();
             ai.ResetPath();
+            Destroy(healthBar.gameObject);
             Destroy(this.gameObject, 0.1f);
 
         }
@@ -42,5 +60,7 @@ public class FindHome : MonoBehaviour
         {                                                                 //pivot position
             healthBar.transform.position = Camera.main.WorldToScreenPoint(this.transform.position + Vector3.up * 1.2f);
         }
+
+
     }
 }
