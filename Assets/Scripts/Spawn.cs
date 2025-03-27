@@ -8,15 +8,20 @@ public class Spawn : MonoBehaviour
     public int maxCount = 10;
     public float startDelay = 1.0f;
 
-
-    private int count = 0;
+    int count = 0;
 
     void Start()
     {
+         Restart();
+    }
+
+    public void Restart()
+    {
+        count = 0;
         InvokeRepeating("Spawner", startDelay, spawnRate);
     }
 
-    void Spawner()
+    public void Spawner()
     {
         GameObject goob = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         goob.GetComponent<FindHome>().destination = homeLocation;

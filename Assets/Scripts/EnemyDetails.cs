@@ -7,4 +7,5 @@ public class EnemyDetails : ScriptableObject
     public string cName;
     public float speed;
     public int maxHealth;
+    public int reward;
 }

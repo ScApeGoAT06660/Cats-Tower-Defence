@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour
     public GameObject gun;
     public TurretProperties turretProperties;
     public AudioSource firingSound;
+    public ParticleSystem particleSystem;
 
     GameObject currentTarget;
     FindHome currentTargetCode;
@@ -37,6 +38,7 @@ public class Shoot : MonoBehaviour
     {
         coreStartRotation = core.transform.rotation;
         gunStartRotation = gun.transform.localRotation;
+        particleSystem.Stop();
     }
 
    void CoolDown()
@@ -50,6 +52,7 @@ public class Shoot : MonoBehaviour
         { 
             currentTargetCode.Hit((int)turretProperties.damage);
             firingSound.Play();
+            particleSystem.Emit(100);
             cooldown = false;
             Invoke("CoolDown", turretProperties.reloadTime);
         }
@@ -79,7 +82,7 @@ public class Shoot : MonoBehaviour
 
             Vector3 directionToTarget = currentTarget.transform.position - gun.transform.position;
 
-            if(Vector3.Angle(directionToTarget, gun.transform.forward) < 10) //10 is the accuracy
+            if(Vector3.Angle(directionToTarget, gun.transform.forward) < turretProperties.aimingAccuracy)
                 if(Random.Range (0, 100) < turretProperties.accuracy)
                     ShootTarget();
         }

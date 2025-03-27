@@ -38,6 +38,9 @@ public class FindHome : MonoBehaviour
 
             if (healthBar.value <= 0)
             {
+                LevelManager.totalMoney += enemyDetails.reward;
+                LevelManager.RemoveEnemy();
+                LevelManager.DisplayDeath(this.transform.position + new Vector3(0, 0.5f, 0));
                 Destroy(healthBar.gameObject);
                 Destroy(this.gameObject, 0.1f);
             }
@@ -50,6 +53,7 @@ public class FindHome : MonoBehaviour
         if(ai.remainingDistance < 0.5f && ai.hasPath)
         {
             LevelManager.RemoveEnemy();
+            LevelManager.RemoveLife();
             ai.ResetPath();
             Destroy(healthBar.gameObject);
             Destroy(this.gameObject, 0.1f);
@@ -60,7 +64,5 @@ public class FindHome : MonoBehaviour
         {                                                                 //pivot position
             healthBar.transform.position = Camera.main.WorldToScreenPoint(this.transform.position + Vector3.up * 1.2f);
         }
-
-
     }
 }
