@@ -190,9 +190,11 @@ public class UIInterface : MonoBehaviour
             if (Physics.Raycast(ray, out hit) && 
                 hit.collider.gameObject.CompareTag("Platform"))
             {
+                float platformRotation = hit.collider.gameObject.GetComponent<PlatformDetails>().rotation;
                 Vector3 newPosition = hit.collider.gameObject.transform.position;
                 newPosition.y += 1f; 
                 focusObj.transform.position = newPosition;
+                focusObj.transform.Rotate(0, platformRotation, 0);
 
                 hit.collider.gameObject.tag = "Occupied";
 

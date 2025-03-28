@@ -65,6 +65,7 @@ public class LevelManager : MonoBehaviour
         { 
             death.transform.position = position;
             death.Emit(1);
+            Destroy(death, 1);
         }
     }
 
